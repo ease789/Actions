@@ -16,29 +16,30 @@ Github Actions使用方法见[@lxk0301](https://raw.githubusercontent.com/lxk030
 const $ = new Env("中青看点")
 //const notify = $.isNode() ? require('./sendNotify') : '';
 let ReadArr = [], YouthBody = "", readscore = 0;
-let bodys = $.getdata("zqgetbody_body");
+// let bodys = $.getdata("zqgetbody_body");
 
-if (!(bodys && bodys != '')) {
-  $.msg("", "", '请先阅读文章获取中青body\nbody获取越多，脚本可获得青豆越多')
-  $.done()
-}
-YouthBody = bodys.split('&');
-//   if (process.env.YOUTH_READ && process.env.YOUTH_READ.indexOf('&') > -1) {
-//   YouthBody = process.env.YOUTH_READ.split('&');
-//   console.log(`您选择的是用"&"隔开\n`)
-//   }
-//   else if (process.env.YOUTH_READ && process.env.YOUTH_READ.indexOf('\n') > -1) {
-//   YouthBody = process.env.YOUTH_READ.split('\n');
-//   console.log(`您选择的是用换行隔开\n`)
-//   } else {
-//   YouthBody = process.env.YOUTH_READ.split()
-//   }
+// if (!(bodys && bodys != '')) {
+//   $.msg("", "", '请先阅读文章获取中青body\nbody获取越多，脚本可获得青豆越多')
+//   $.done()
+// }
+// YouthBody = bodys.split('&');
+  if (process.env.YOUTH_READ && process.env.YOUTH_READ.indexOf('&') > -1) {
+  YouthBody = process.env.YOUTH_READ.split('&');
+  console.log(`您选择的是用"&"隔开\n`)
+  }
+  else if (process.env.YOUTH_READ && process.env.YOUTH_READ.indexOf('\n') > -1) {
+  YouthBody = process.env.YOUTH_READ.split('\n');
+  console.log(`您选择的是用换行隔开\n`)
+  } else {
+  YouthBody = process.env.YOUTH_READ.split()
+  }
 Object.keys(YouthBody).forEach((item) => {
   if (YouthBody[item]) {
     ReadArr.push(YouthBody[item])
   }
 })
-let indexLast = $.getdata('zqgetbody_body_index');
+// let indexLast = $.getdata('zqgetbody_body_index');
+let indexLast = 1;
 $.begin = indexLast ? parseInt(indexLast,10) : 1;
 console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
 console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
