@@ -23,8 +23,6 @@ var nick=''
 var cash=''
 var signday=''  
 var totalscore=''
-var subTitle=''
-var detail=''
 let cookieArr = [], cookie = '',
     readArr = [], articlebodyVal ='',
     timeArr = [], timebodyVal = '',
