@@ -1,16 +1,17 @@
-name: Curtin-中青看点-1
+name: Curtin-中青看点自动阅读
 
 on:
   workflow_dispatch:
 
   schedule:
-     - cron: '20 6-12 * * *'
+     - cron: '20 6-22 * * *'
   watch:
     types: started
 jobs:
   build:
     env:
       YOUTH_READ: ${{ secrets.YOUTH_READ }}
+      YOUTH_READ_2: ${{ secrets.YOUTH_READ_2 }}
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
@@ -22,9 +23,15 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【中青看点1】'
+      - name: '运行 【中青看点一】'
         if: env.YOUTH_READ      
         run: |
           node Youth/Youth_AutoRead.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ }}
+      - name: '运行 【中青看点二】'
+        if: env.YOUTH_READ_2      
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ_2 }}
