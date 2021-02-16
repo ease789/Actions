@@ -19,10 +19,7 @@ let ARTBODYs = $.getdata('read_zq');
 let READTIME = $.getdata('readtime_zq');
 let cardTime = $.getdata('zqtime')||"05";//打卡时间
 let rotaryscore=0,doublerotary=0; 
-var nick=''
-var cash=''
-var signday=''  
-var totalscore=''
+
 let cookieArr = [], cookie = '',
     readArr = [], articlebodyVal ='',
     timeArr = [], timebodyVal = '',
@@ -229,7 +226,7 @@ function getsign() {
         })
     })
 }
-
+      
 function userInfo() {
     return new Promise((resolve, reject) => {
         $.post(kdHost('WebApi/NewTaskIos/getSign'), async(error, resp, data) => {
@@ -679,7 +676,7 @@ function earningsInfo() {
     $.get(kdHost(`wap/user/balance?`+cookie), (error, response, data) =>{
       infores = JSON.parse(data);
       if (infores.status == 0) {
-        detail += ` <收益统计> ：\n`
+        detail += ` <收益统计>：\n`
         for (i = 0; i < infores.history[0].group.length; i++) {
           detail += '【' + infores.history[0].group[i].name + '】' + infores.history[0].group[i].money + '个青豆\n'
         }
