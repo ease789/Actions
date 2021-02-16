@@ -1,0 +1,30 @@
+name: Curtin-中青看点-2
+
+on:
+  workflow_dispatch:
+
+  schedule:
+     - cron: '10 13-21 * * *'
+  watch:
+    types: started
+jobs:
+  build:
+    env:
+      YOUTH_READ: ${{ secrets.YOUTH_READ_2 }}
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          npm install
+      - name: '运行 【中青看点2】'
+        if: env.YOUTH_READ      
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ_2 }}
