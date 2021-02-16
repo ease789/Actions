@@ -1,10 +1,10 @@
-name: Curtin-中青看点
+name: Curtin-中青看点-1
 
 on:
   workflow_dispatch:
 
   schedule:
-     - cron: '0 7-10 * * *'
+     - cron: '20 6-12 * * *'
   watch:
     types: started
 jobs:
@@ -22,7 +22,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【中青看点】'
+      - name: '运行 【中青看点1】'
         if: env.YOUTH_READ      
         run: |
           node Youth/Youth_AutoRead.js
