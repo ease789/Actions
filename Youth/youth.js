@@ -21,6 +21,10 @@ let cardTime = $.getdata('zqtime')||"05";//打卡时间
 let rotaryscore=0,doublerotary=0; 
 var nick=''
 var cash=''
+var signday=''  
+var totalscore=''
+var subTitle=''
+var detail=''
 let cookieArr = [], cookie = '',
     readArr = [], articlebodyVal ='',
     timeArr = [], timebodyVal = '',
@@ -227,7 +231,7 @@ function getsign() {
         })
     })
 }
-      
+
 function userInfo() {
     return new Promise((resolve, reject) => {
         $.post(kdHost('WebApi/NewTaskIos/getSign'), async(error, resp, data) => {
