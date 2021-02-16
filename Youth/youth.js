@@ -10,7 +10,7 @@ let s = 1000 //各数据接口延迟
 const $ = new Env("中青看点")
 let notifyInterval = $.getdata("notifytimes")||50 //通知间隔，默认抽奖每50次通知一次，如需关闭全部通知请设为0
 const notify = $.isNode() ? require('./sendNotify') : '';
-const ONCard = $.getdata('zqcard')||"true" //早起打卡开关
+const ONCard = $.getdata('zqcard')||"false" //早起打卡开关
 const withdrawcash = $.getdata('zqcash')||30 //提现金额
 let withdrawUrl = $.getdata('cashurl_zq');
 let withdrawBody = $.getdata('cashbody_zq');
@@ -20,6 +20,7 @@ let READTIME = $.getdata('readtime_zq');
 let cardTime = $.getdata('zqtime')||"05";//打卡时间
 let rotaryscore=0,doublerotary=0; 
 var nick=''
+var cash=''
 let cookieArr = [], cookie = '',
     readArr = [], articlebodyVal ='',
     timeArr = [], timebodyVal = '',
