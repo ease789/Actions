@@ -1,6 +1,6 @@
 /*
 本脚本修改Sunert中青看点.再次感谢大佬
-赞赏:中青邀请码`52049058`,农妇山泉 -> 有点咸，万分感谢
+赞赏:中青邀请码`53318330`,农妇山泉 -> 有点咸，万分感谢
 本脚本仅适用于中青看点极速版签加转盘领取青豆
 
 食用方法请看Sunert大佬中青看点
@@ -60,37 +60,37 @@ if ($.isNode()) {
 	if (process.env.YOUTH_HEADER &&process.env.YOUTH_HEADER.indexOf(COOKIES_SPLIT) > -1) {
 	    CookieYouth = process.env.YOUTH_HEADER.split(COOKIES_SPLIT);
 	} else {
-	    CookieYouth = process.env.YOUTH_HEADER.split();
+	    CookieYouth = process.env.YOUTH_HEADER.split("#");
 	}
 	
 	if (process.env.YOUTH_ARTBODY &&process.env.YOUTH_ARTBODY.indexOf(COOKIES_SPLIT) > -1) {
 	    ARTBODYs = process.env.YOUTH_ARTBODY.split(COOKIES_SPLIT);
 	} else {
-	    ARTBODYs = process.env.YOUTH_ARTBODY.split();
+	    ARTBODYs = process.env.YOUTH_ARTBODY.split("#");
 	}
 	
 	if (process.env.YOUTH_REDBODY &&process.env.YOUTH_REDBODY.indexOf(COOKIES_SPLIT) > -1) {
 	    REDBODYs = process.env.YOUTH_REDBODY.split(COOKIES_SPLIT);
 	} else {
-	    REDBODYs = process.env.YOUTH_REDBODY.split();
+	    REDBODYs = process.env.YOUTH_REDBODY.split("#");
 	}
 
 	if (process.env.YOUTH_TIME &&process.env.YOUTH_TIME.indexOf(COOKIES_SPLIT) > -1) {
 	  READTIME = process.env.YOUTH_TIME.split(COOKIES_SPLIT);
 	} else {
-	  READTIME = process.env.YOUTH_TIME.split();
+	  READTIME = process.env.YOUTH_TIME.split("#");
 	}
 	
 	if (process.env.YOUTH_WITHDEAWURL &&process.env.YOUTH_WITHDEAWURL.indexOf(COOKIES_SPLIT) > -1) {
 	  withdrawUrls = process.env.YOUTH_WITHDEAWURL.split(COOKIES_SPLIT);
 	} else {
-	  withdrawUrls = process.env.YOUTH_WITHDEAWURL.split();
+	  withdrawUrls = process.env.YOUTH_WITHDEAWURL.split("#");
 	}
 	
 	if (process.env.YOUTH_WITHDEAWBODY &&process.env.YOUTH_WITHDEAWBODY.indexOf(COOKIES_SPLIT) > -1) {
 	  withdrawBodys = process.env.YOUTH_WITHDEAWBODY.split(COOKIES_SPLIT);
 	} else {
-	  withdrawBodys = process.env.YOUTH_WITHDEAWBODY.split();
+	  withdrawBodys = process.env.YOUTH_WITHDEAWBODY.split("#");
 	}
 }
 
