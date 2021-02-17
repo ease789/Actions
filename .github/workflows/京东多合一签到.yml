@@ -29,19 +29,19 @@ jobs:
         run: |
           npm install
       - name: '运行 【京东多合一签到-账号①】'
-	if: env.KEY_1
-        run: |
-	  node JD/JD_DailyBonus.js
+	    if: env.KEY_1
+	    run: |
+	      node JD/JD_DailyBonus.js
         env:
           KEY: ${{ secrets.KEY_1 }}
       - name: '运行 【京东多合一签到-账号②】'
-  	if: env.KEY_2
+  	    if: env.KEY_2
       	run: |
           node JD/JD_DailyBonus.js
       	env:
        	  KEY: ${{ secrets.KEY_2 }}
       - name: '运行 【京东多合一签到-账号③】'
-	if: env.KEY_3
+	    if: env.KEY_3
         run: |
           node JD/JD_DailyBonus.js
         env:
@@ -53,7 +53,7 @@ jobs:
       	env:
        	  KEY: ${{ secrets.KEY_4 }}
       - name: '运行 【京东多合一签到-账号⑤】'
-	if: env.KEY_5
+	    if: env.KEY_5
         run: |
           node JD/JD_DailyBonus.js
         env:
