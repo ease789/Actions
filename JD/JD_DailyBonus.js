@@ -8,6 +8,7 @@
 电报频道: @NobyDa 
 问题反馈: @NobyDa_bot 
 如果转载: 请注明出处
+修改自Curtinlv 兼容ac环境运行
 
 *************************
 【 JSbox, Node.js 说明 】 :
@@ -101,6 +102,20 @@ var ReDis = false; //是否移除所有禁用列表, true则开启. 适用于触
 var out = 0; //接口超时退出, 用于可能发生的网络不稳定, 0则关闭. 如QX日志出现大量"JS Context timeout"后脚本中断时, 建议填写6000
 
 var $nobyda = nobyda();
+
+//获取cookie
+
+if ($.isNode()) {
+	
+	if (process.env.Key) {
+		Key = process.env.Key;
+	}
+	
+	if (process.env.DualKey) {
+		DualKey = process.env.DualKey;
+	}
+	
+}
 
 async function all() {
   merge = {};
