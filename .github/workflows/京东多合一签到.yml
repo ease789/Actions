@@ -1,12 +1,14 @@
-name: Curtin-京东-多合一签到
 
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Curtin-京东-多合一签到
 on:
   workflow_dispatch:
   schedule:
      - cron: '22 9,12,20 * * *'
   watch:
     types: started
-
 jobs:
   build:
     env:
@@ -36,10 +38,10 @@ jobs:
           KEY: ${{ secrets.KEY_1 }}
       - name: '运行 【京东多合一签到-账号②】'
         if: env.KEY_2
-      	run: |
+        run: |
           node JD/JD_DailyBonus.js
-      	env:
-       	  KEY: ${{ secrets.KEY_2 }}
+        env:
+          KEY: ${{ secrets.KEY_2 }}
       - name: '运行 【京东多合一签到-账号③】'
         if: env.KEY_3
         run: |
@@ -48,10 +50,10 @@ jobs:
           KEY: ${{ secrets.KEY_3 }}
       - name: '运行 【京东多合一签到-账号④】'
         if: env.KEY_4
-      	run: |
+        run: |
           node JD/JD_DailyBonus.js
-      	env:
-       	  KEY: ${{ secrets.KEY_4 }}
+        env:
+          KEY: ${{ secrets.KEY_4 }}
       - name: '运行 【京东多合一签到-账号⑤】'
         if: env.KEY_5
         run: |
