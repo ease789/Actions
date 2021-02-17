@@ -105,12 +105,12 @@ var $nobyda = nobyda();
 
 //获取cookie
 
-if (process.env.Key) {
-		Key = process.env.KEY;
+if (process.env.KEY) {
+	Key = process.env.KEY;
 	}
 	
-if (process.env.DualKey) {
-		DualKey = process.env.DUALKEY;
+if (process.env.DUALKEY) {
+	DualKey = process.env.DUALKEY;
 	}
 
 
