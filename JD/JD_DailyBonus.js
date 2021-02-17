@@ -105,17 +105,14 @@ var $nobyda = nobyda();
 
 //获取cookie
 
-if ($.isNode()) {
-	
-	if (process.env.Key) {
-		Key = process.env.Key;
+if (process.env.Key) {
+		Key = process.env.KEY;
 	}
 	
-	if (process.env.DualKey) {
-		DualKey = process.env.DualKey;
+if (process.env.DualKey) {
+		DualKey = process.env.DUALKEY;
 	}
-	
-}
+
 
 async function all() {
   merge = {};
