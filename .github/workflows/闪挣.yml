@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
   schedule:
-     - cron: '0,8,16,24,32,40,48,56 * * * *'
+     - cron: '12 */1 * * *'
   watch:
     types: started
 jobs:
@@ -20,7 +20,49 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【闪挣】'   
+      - name: '运行 【闪挣1】'   
+        run: |
+          node SZ/sz.js
+        env:
+          SZURL: ${{ secrets.SZURL }}
+          SZHD: ${{ secrets.SZHD }}
+      - name: '运行 【闪挣2】'   
+        run: |
+          node SZ/sz.js
+        env:
+          SZURL: ${{ secrets.SZURL }}
+          SZHD: ${{ secrets.SZHD }}
+      - name: '运行 【闪挣3】'   
+        run: |
+          node SZ/sz.js
+        env:
+          SZURL: ${{ secrets.SZURL }}
+          SZHD: ${{ secrets.SZHD }}
+      - name: '运行 【闪挣4】'   
+        run: |
+          node SZ/sz.js
+        env:
+          SZURL: ${{ secrets.SZURL }}
+          SZHD: ${{ secrets.SZHD }}
+      - name: '运行 【闪挣5】'   
+        run: |
+          node SZ/sz.js
+        env:
+          SZURL: ${{ secrets.SZURL }}
+          SZHD: ${{ secrets.SZHD }}
+      - name: '运行 【闪挣6】'   
+        run: |
+          node SZ/sz.js
+        env:
+          SZURL: ${{ secrets.SZURL }}
+          SZHD: ${{ secrets.SZHD }}
+      - name: '运行 【闪挣7】'   
+        run: |
+          node SZ/sz.js
+        env:
+          SZURL: ${{ secrets.SZURL }}
+          SZHD: ${{ secrets.SZHD }}
+      - name: '运行 【闪挣8】'   
         run: |
           node SZ/sz.js
         env:
