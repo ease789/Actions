@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
   schedule:
-     - cron: '20 0-14/2 * * *'
+     - cron: '20 */3 * * *'
   watch:
     types: started
 jobs:
@@ -12,6 +12,10 @@ jobs:
     env:
       YOUTH_READ: ${{ secrets.YOUTH_READ }}
       YOUTH_READ_2: ${{ secrets.YOUTH_READ_2 }}
+      YOUTH_READ_3: ${{ secrets.YOUTH_READ_3 }}
+      YOUTH_READ_4: ${{ secrets.YOUTH_READ_4 }}
+      YOUTH_READ_5: ${{ secrets.YOUTH_READ_5 }}
+      YOUTH_READ_6: ${{ secrets.YOUTH_READ_6 }}
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
@@ -35,3 +39,27 @@ jobs:
           node Youth/Youth_AutoRead.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ_2 }}
+      - name: '运行 【中青看点三】'
+        if: env.YOUTH_READ_3      
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ_3 }}
+      - name: '运行 【中青看点四】'
+        if: env.YOUTH_READ_4      
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ_4 }}
+      - name: '运行 【中青看点五】'
+        if: env.YOUTH_READ_5      
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ_5 }}
+      - name: '运行 【中青看点六】'
+        if: env.YOUTH_READ_6      
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ_6 }}
