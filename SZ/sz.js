@@ -3,7 +3,7 @@
 更新时间：2021-02-18 @肥皂
 脚本说明：闪挣
 脚本为闪挣自动刷视频奖励和小游戏奖励
-
+修改：Curtinlv 兼容ac环境运行
 上限暂时不知道多少，刷了一晚上有一万还没上限，没测试
 
 暂定一块钱一天？？？？？？
@@ -16,11 +16,11 @@ TG电报群: https://t.me/hahaha8028
 注意:
 扫描二维码下载
 
-二维码下载地址 https://raw.githubusercontent.com/age174/-/main/BB9F8DA3-E631-4B4C-A65A-751829C1D7EC.jpeg
+二维码下载地址 https://gitee.com/curtinlv/img/raw/master/ShanZheng/shanzheng.png
 
 保存二维码微信扫码打开下载。
 
-我的邀请码 : u35545875447  感谢大佬们填写 
+我的邀请码 : u36299601126  感谢大佬们填写 
 
 因为还没测出上限，可以试试每十分钟运行一次看看
 
@@ -62,10 +62,14 @@ var szhd=''
 
 if (process.env.SZURL) {
 	szurl = process.env.SZURL;
+}else{
+	szurl = $.getdata('szurl');
 }
 
 if (process.env.SZHD) {
 	szhd = process.env.SZHD;
+}else{
+	szhd = $.getdata('szhd');
 }
 
 !(async () => {
