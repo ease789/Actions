@@ -55,8 +55,10 @@ hostname = api-9f9d25.sz365.cn
 
 */
 const $ = new Env('闪挣');
-let szurl = $.getdata('szurl')
-let szhd = $.getdata('szhd')
+// let szurl = $.getdata('szurl')
+// let szhd = $.getdata('szhd')
+var szurl=''
+var szhd=''
 
 if (process.env.SZURL) {
 	szurl = process.env.SZURL;
