@@ -25,4 +25,4 @@ jobs:
           node SZ/sz.js
         env:
           SZURL: ${{ secrets.SZURL }}
-		  SZHD: ${{ secrets.SZHD }}
+          SZHD: ${{ secrets.SZHD }}
