@@ -6,7 +6,7 @@ name: Curtin-中青看点-签到转盘
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/28 22,23,0-14/3 * * *'
+     - cron: '*/28 0-14/2,21-23 * * *'
   watch:
     types: started
 
