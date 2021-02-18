@@ -55,8 +55,19 @@ hostname = api-9f9d25.sz365.cn
 
 */
 const $ = new Env('闪挣');
-let szurl = $.getdata('szurl')
-let szhd = $.getdata('szhd')
+// let szurl = $.getdata('szurl')
+// let szhd = $.getdata('szhd')
+var szurl=''
+var szhd=''
+
+if (process.env.SZURL) {
+	szurl = process.env.SZURL;
+}
+
+if (process.env.SZHD) {
+	szhd = process.env.SZHD;
+}
+
 !(async () => {
   if (typeof $request !== "undefined") {
     await szck()
@@ -96,13 +107,14 @@ function szck() {
 function szsp(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('szurl') === "undefined") {
+     // if (typeof $.getdata('szurl') === "undefined") {
+	  if (typeof szurl === "undefined") {
         $.msg($.name,"",'请先获取闪挣数据',)
         $.done()
       }
 let url = {
         url : 'https://api-9f9d25.sz365.cn/api/virtual_currency_v2/reward',
-        headers : JSON.parse($.getdata('szhd')),
+        headers : JSON.parse(szhd),
         body : `type=203`,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -130,7 +142,7 @@ function szyx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'https://api-9f9d25.sz365.cn/api/virtual_currency_v2/reward',
-        headers : JSON.parse($.getdata('szhd')),
+        headers : JSON.parse(szhd),
         body :  `type=205`,}
       $.post(url, async (err, resp, data) => {
         try {
