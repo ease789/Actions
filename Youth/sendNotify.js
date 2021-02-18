@@ -63,7 +63,7 @@ if (process.env.DD_BOT_TOKEN) {
     DD_BOT_SECRET = process.env.DD_BOT_SECRET;
   }
 }
-if (process.env.YOUTH_NOTIFY_CONTROL && process.env.YOUTH_NOTIFY_CONTROL==false) {
+if (process.env.YOUTH_NOTIFY_CONTROL && process.env.YOUTH_NOTIFY_CONTROL==true) {
   youthNotifyControl = process.env.YOUTH_NOTIFY_CONTROL;
 }
 if (process.env.TXNEWS_NOTIFY_CONTROL && process.env.TXNEWS_NOTIFY_CONTROL==false) {
