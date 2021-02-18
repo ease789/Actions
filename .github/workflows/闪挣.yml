@@ -68,3 +68,9 @@ jobs:
         env:
           SZURL: ${{ secrets.SZURL }}
           SZHD: ${{ secrets.SZHD }}
+      - name: '运行 【闪挣9】'   
+        run: |
+          node SZ/sz.js
+        env:
+          SZURL: ${{ secrets.SZURL }}
+          SZHD: ${{ secrets.SZHD }}
