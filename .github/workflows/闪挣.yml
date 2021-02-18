@@ -1,4 +1,4 @@
-name: Curtin-闪赚
+name: Curtin-闪挣
 
 on:
   workflow_dispatch:
@@ -20,7 +20,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【闪赚】'   
+      - name: '运行 【闪挣】'   
         run: |
           node SZ/sz.js
         env:
