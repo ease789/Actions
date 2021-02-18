@@ -107,7 +107,8 @@ function szck() {
 function szsp(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('szurl') === "undefined") {
+     // if (typeof $.getdata('szurl') === "undefined") {
+	  if (typeof szurl === "undefined") {
         $.msg($.name,"",'请先获取闪挣数据',)
         $.done()
       }
