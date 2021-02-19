@@ -1,10 +1,10 @@
-name: Curtin-中青看点-自动阅读e
+name: Curtin-中青看点-自动阅读
 
 on:
   workflow_dispatch:
 
   schedule:
-     - cron: '10 */4 * * *'
+     - cron: '10 */5 * * *'
   watch:
     types: started
 jobs:
