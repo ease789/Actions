@@ -804,7 +804,7 @@ function rotaryCheck() {
             return resolve();
         }
         let i = 0;
-        while (i <= 3) {
+        while (i <= 4) {
             if (100 - rotaryres.data.remainTurn == rotaryres.data.chestOpen[i].times&&rotaryres.data.chestOpen[i].received==0) {
                 await runRotary(i + 1)
             }
