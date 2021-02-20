@@ -1,0 +1,52 @@
+name: Curtin-中青看点-自动阅读C
+
+on:
+  workflow_dispatch:
+
+  schedule:
+     - cron: '26 */5 * * *'
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          npm install
+      - name: '运行 【中青看点一】'  
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ_C_1_50 }}
+      - name: '运行 【中青看点二】'  
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ_C_51_100 }}
+      - name: '运行 【中青看点三】'  
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ_C_101_150 }}
+      - name: '运行 【中青看点四】'  
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ_C_151_200 }}
+      - name: '运行 【中青看点五】'  
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ_C_201_250 }}
+      - name: '运行 【中青看点六】'  
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ_C_251_300 }}
