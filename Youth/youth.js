@@ -271,7 +271,11 @@ async function all() {
 			}else{
 				detail += `【转盘双倍】已用完\n`
 			}
-			await rotaryCheck();
+			// await rotaryCheck();
+			await runRotary(1)
+			await runRotary(2)
+			await runRotary(3)
+			await runRotary(4)
 			await earningsInfo();	
 		}	
 	  }
