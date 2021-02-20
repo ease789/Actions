@@ -800,12 +800,9 @@ function rotary() {
 //转盘宝箱判断
 function rotaryCheck() {
     return new Promise(async(resolve) => {
-        if (rotaryres.code == 10010) {
-            return resolve();
-        }
         let i = 0;
         while (i <= 3) {
-            if (100 - rotaryres.data.remainTurn == rotaryres.data.chestOpen[i].times&&rotaryres.data.chestOpen[i].received==0) {
+            if (100 - rotaryres.data.remainTurn >= rotaryres.data.chestOpen[i].times&&rotaryres.data.chestOpen[i].received==0) {
                 await runRotary(i + 1)
             }
             i++;
