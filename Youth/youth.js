@@ -11,7 +11,7 @@ const $ = new Env("中青看点")
 let notifyInterval = $.getdata("notifytimes")||50 //通知间隔，默认抽奖每50次通知一次，如需关闭全部通知请设为0
 let s = $.getdata('delay_rotary_zq')||"10" //转盘延迟时间
 const notify = $.isNode() ? require('./sendNotify') : '';
-const ONCard = $.getdata('zqcard')||"true" //早起打卡开关
+const ONCard = $.getdata('zqcard')||"false" //早起打卡开关
 const withdrawcash = $.getdata('zqcash')||30 //提现金额
 let withdrawUrl = $.getdata('cashurl_zq');
 let withdrawBody = $.getdata('cashbody_zq');
@@ -428,24 +428,24 @@ function Census() {
     return new Promise((resolve, reject) =>{
     $.post(kdHost('u/wyRAM'),async(error, resp, data) =>{
             await $.wait(500);
-            await int();
+            // await int();
             resolve()
         })
     })
 }
 
-function int() {
-    return new Promise((resolve, reject) =>{
-     let url = {
-         url:"https://kandian.youth.cn/user/mmsq?uid=46308484",
-         headers:kdHost().headers
-     }
-        $.post(url),(error, resp, data) =>{
-            //$.log(resp)
-            resolve()
-        })
-    })
-}
+// function int() {
+//     return new Promise((resolve, reject) =>{
+//      let url = {
+//          url:"https://kandian.youth.cn/user/mmsq?uid=46308484",
+//          headers:kdHost().headers
+//      }
+//         $.post(url),(error, resp, data) =>{
+//             //$.log(resp)
+//             resolve()
+//         })
+//     })
+// }
 //开启时段宝箱
 function openbox() {
   return new Promise((resolve, reject) =>{
