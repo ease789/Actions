@@ -11,10 +11,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
-    env:
-        YOUTH_HEADER: ${{ secrets.YOUTH_HEADER_1 }}
-        YOUTH_ARTBODY: ${{ secrets.YOUTH_ARTBODY_1 }}
-        YOUTH_TIME: ${{ secrets.YOUTH_TIME_1 }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -23,11 +19,9 @@ jobs:
         with:
           node-version: 10.x
       - name: npm install
-        if: env.YOUTH_HEADER
         run: |
           npm install
       - name: '运行 【笑普】'
-        if: env.YOUTH_HEADER
         run: |
           node iboxpay.js
         env:
