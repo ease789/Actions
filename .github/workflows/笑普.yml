@@ -25,7 +25,7 @@ jobs:
         run: |
           node iboxpay.js
         env:
-          XP_refreshTOKEN: ${{XP_REFRESHTOKEN}}
+          XP_refreshTOKEN: ${{secrets.XP_REFRESHTOKEN}}
           PUSH_KEY: ${{ secrets.PUSH_KEY}}
           BARK_PUSH: ${{ secrets.BARK_PUSH}}
           BARK_SOUND: ${{ secrets.BARK_SOUND}}
