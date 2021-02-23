@@ -1,0 +1,49 @@
+name: Curtin-笑普
+
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '*/30 * * * *'
+  watch:
+    types: started
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    env:
+        YOUTH_HEADER: ${{ secrets.YOUTH_HEADER_1 }}
+        YOUTH_ARTBODY: ${{ secrets.YOUTH_ARTBODY_1 }}
+        YOUTH_TIME: ${{ secrets.YOUTH_TIME_1 }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        if: env.YOUTH_HEADER
+        run: |
+          npm install
+      - name: '运行 【笑普】'
+        if: env.YOUTH_HEADER
+        run: |
+          node iboxpay.js
+        env:
+          XP_refreshTOKEN: ${{XP_REFRESHTOKEN}}
+          PUSH_KEY: ${{ secrets.PUSH_KEY}}
+          BARK_PUSH: ${{ secrets.BARK_PUSH}}
+          BARK_SOUND: ${{ secrets.BARK_SOUND}}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN}}
+          TG_USER_ID: ${{ secrets.TG_USER_ID}}
+          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN}}
+          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET}}
+          QYWX_KEY: ${{ secrets.QYWX_KEY}}
+          IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY}}
+          QQ_SKEY: ${{ secrets.QQ_SKEY}}
+          QQ_MODE: ${{ secrets.QQ_MODE}}
+          PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN}}
+          PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER}}
+          TG_PROXY_HOST: ${{ secrets.TG_PROXY_HOST}}
+          TG_PROXY_PORT: ${{ secrets.TG_PROXY_PORT}}
