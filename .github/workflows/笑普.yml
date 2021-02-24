@@ -1,4 +1,4 @@
-name: Curtin-笑普
+name: 笑普
 
 on:
   workflow_dispatch:
