@@ -1,4 +1,4 @@
-name: Curtin-中青看点-签到转盘开箱
+name: Curtin-中青看点-签到【new】
 
 on:
   workflow_dispatch:
