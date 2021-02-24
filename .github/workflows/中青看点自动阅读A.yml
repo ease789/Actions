@@ -1,4 +1,4 @@
-name: Curtin-中青看点-自动阅读A
+name: 中青看点-自动阅读A
 
 on:
   workflow_dispatch:
