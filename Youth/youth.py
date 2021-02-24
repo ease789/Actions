@@ -53,9 +53,9 @@ by Curtin
 """
 if "YOUTH_HEADER" in os.environ and "YOUTH_READBODY" in os.environ and "YOUTH_READTIMEBODY" in os.environ :
     COOKIELIST = []
-    YOUTH_HEADER_LIST=os.environ["YOUTH_HEADER").split("\n")
-    YOUTH_READBODY_LIST=os.environ["YOUTH_READBODY").split("\n")
-    YOUTH_READTIMEBODY_LIST=os.environ["YOUTH_READTIMEBODY").split("\n")
+    YOUTH_HEADER_LIST=os.environ["YOUTH_HEADER"].split("\n")
+    YOUTH_READBODY_LIST=os.environ["YOUTH_READBODY"].split("\n")
+    YOUTH_READTIMEBODY_LIST=os.environ["YOUTH_READTIMEBODY"].split("\n")
     cookie_num = locals()
     for u in range(len(PY_YOUTH_HEADER.split("\n"))):
         cookie_num['cookie' + str(u+1)] = {}
