@@ -57,7 +57,7 @@ if "YOUTH_HEADER" in os.environ and "YOUTH_READBODY" in os.environ and "YOUTH_RE
     YOUTH_READBODY_LIST=os.environ["YOUTH_READBODY"].split("\n")
     YOUTH_READTIMEBODY_LIST=os.environ["YOUTH_READTIMEBODY"].split("\n")
     cookie_num = locals()
-    for u in range(len(PY_YOUTH_HEADER.split("\n"))):
+    for u in range(len(YOUTH_HEADER_LIST)):
         cookie_num['cookie' + str(u+1)] = {}
         cookie_num['cookie' + str(u+1)]["YOUTH_HEADER"] = YOUTH_HEADER_LIST[u]
         cookie_num['cookie' + str(u+1)]["YOUTH_READBODY"] = YOUTH_READBODY_LIST[u]
