@@ -3,7 +3,7 @@ name: 芝嫲视频
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 * * * *'
+     - cron: '35 * * * *'
   watch:
     types: started
 
