@@ -53,21 +53,18 @@ by Curtin
 """
 if "YOUTH_HEADER" in os.environ and "YOUTH_READBODY" in os.environ and "YOUTH_READTIMEBODY" in os.environ :
     COOKIELIST = []
-    YOUTH_HEADER=os.environ["YOUTH_HEADER"]
-    YOUTH_READBODY=os.environ["YOUTH_READBODY"]
-    YOUTH_READTIMEBODY=os.environ["YOUTH_READTIMEBODY"]
-    YOUTH_HEADER_LIST=YOUTH_HEADER.split("\n")
-    YOUTH_READBODY_LIST=YOUTH_READBODY.split("\n")
-    YOUTH_READTIMEBODY_LIST=YOUTH_READTIMEBODY.split("\n")
+    YOUTH_HEADER_LIST=os.environ["YOUTH_HEADER"].split("\n")
+    YOUTH_READBODY_LIST=os.environ["YOUTH_READBODY"].split("\n")
+    YOUTH_READTIMEBODY_LIST=os.environ["YOUTH_READTIMEBODY"].split("\n")
     cookie_num = locals()
     for u in range(len(YOUTH_HEADER_LIST)):
-        cookie_num['cookie' + str(u+1)] = {}
-        cookie_num['cookie' + str(u+1)]["YOUTH_HEADER"] = YOUTH_HEADER_LIST[u]
-        cookie_num['cookie' + str(u+1)]["YOUTH_READBODY"] = YOUTH_READBODY_LIST[u]
-        cookie_num['cookie' + str(u+1)]["YOUTH_READTIMEBODY"] = YOUTH_READTIMEBODY_LIST[u]
-        cookie_num['cookie' + str(u+1)]["YOUTH_REDBODY"] = ''
-        cookie_num['cookie' + str(u+1)]["YOUTH_WITHDRAWBODY"] = ''
-        COOKIELIST.append(cookie_num.get('cookie' + str(u+1)))
+        cookie_num['cookies' + str(u+1)] = {}
+        cookie_num['cookies' + str(u+1)]["YOUTH_HEADER"] = YOUTH_HEADER_LIST[u]
+        cookie_num['cookies' + str(u+1)]["YOUTH_READBODY"] = YOUTH_READBODY_LIST[u]
+        cookie_num['cookies' + str(u+1)]["YOUTH_READTIMEBODY"] = YOUTH_READTIMEBODY_LIST[u]
+        cookie_num['cookies' + str(u+1)]["YOUTH_REDBODY"] = ''
+        cookie_num['cookies' + str(u+1)]["YOUTH_WITHDRAWBODY"] = ''
+        COOKIELIST.append(cookie_num.get('cookies' + str(u+1)))
 
 cur_path = os.path.abspath(os.path.dirname(__file__))
 root_path = os.path.split(cur_path)[0]
