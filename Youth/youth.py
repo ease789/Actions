@@ -59,7 +59,7 @@ if "YOUTH_HEADER" in os.environ and "YOUTH_READBODY" in os.environ and "YOUTH_RE
     cookie_num = locals()
     for u in range(len(YOUTH_HEADER_LIST)):
         cookie_num['cookies' + str(u+1)] = {}
-        cookie_num['cookies' + str(u+1)]["YOUTH_HEADER"] = YOUTH_HEADER_LIST[u]
+        cookie_num['cookies' + str(u+1)]["YOUTH_HEADER"] = json.loads(YOUTH_HEADER_LIST[u])
         cookie_num['cookies' + str(u+1)]["YOUTH_READBODY"] = YOUTH_READBODY_LIST[u]
         cookie_num['cookies' + str(u+1)]["YOUTH_READTIMEBODY"] = YOUTH_READTIMEBODY_LIST[u]
         cookie_num['cookies' + str(u+1)]["YOUTH_REDBODY"] = ''
