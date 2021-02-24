@@ -30,24 +30,39 @@ cookies2 = {}
 COOKIELIST = [cookies1,]  # 多账号准备
 
 # ac读取环境变量
-if "YOUTH_HEADER1" in os.environ:
-  COOKIELIST = []
-  for i in range(5):
-    headerVar = 'YOUTH_HEADER{}'.format(a = str(i+1))
-    readBodyVar = 'YOUTH_READBODY{}'.format(a =str(i+1))
-    # redBodyVar = 'YOUTH_REDBODY{a}'.format(a =str(i+1))
-    redBodyVar = ''
-    readTimeBodyVar = 'YOUTH_READTIMEBODY{}'.format(a =str(i+1))
-    # withdrawBodyVar = 'YOUTH_WITHDRAWBODY{a}'.format(a =str(i+1))
-    withdrawBodyVar = ''
-    if headerVar in os.environ and os.environ[headerVar] and readBodyVar in os.environ and os.environ[readBodyVar] and redBodyVar in os.environ and os.environ[redBodyVar] and readTimeBodyVar in os.environ and os.environ[readTimeBodyVar]:
-      globals()['cookies'+str(i + 1)]["YOUTH_HEADER"] = json.loads(os.environ[headerVar])
-      globals()['cookies'+str(i + 1)]["YOUTH_READBODY"] = os.environ[readBodyVar]
-      globals()['cookies'+str(i + 1)]["YOUTH_REDBODY"] = os.environ[redBodyVar]
-      globals()['cookies' + str(i + 1)]["YOUTH_READTIMEBODY"] = os.environ[readTimeBodyVar]
-      globals()['cookies' + str(i + 1)]["YOUTH_WITHDRAWBODY"] = os.environ[withdrawBodyVar]
-      COOKIELIST.append(globals()['cookies'+str(i + 1)])
-  print(COOKIELIST)
+# if "YOUTH_HEADER1" in os.environ:
+#   COOKIELIST = []
+#   for i in range(5):
+#     headerVar = f'YOUTH_HEADER{str(i+1)}'
+#     readBodyVar = f'YOUTH_READBODY{str(i+1)}'
+#     redBodyVar = f'YOUTH_REDBODY{str(i+1)}'
+#     readTimeBodyVar = f'YOUTH_READTIMEBODY{str(i+1)}'
+#     withdrawBodyVar = f'YOUTH_WITHDRAWBODY{str(i+1)}'
+#     if headerVar in os.environ and os.environ[headerVar] and readBodyVar in os.environ and os.environ[readBodyVar] and redBodyVar in os.environ and os.environ[redBodyVar] and readTimeBodyVar in os.environ and os.environ[readTimeBodyVar]:
+#       globals()['cookies'+str(i + 1)]["YOUTH_HEADER"] = json.loads(os.environ[headerVar])
+#       globals()['cookies'+str(i + 1)]["YOUTH_READBODY"] = os.environ[readBodyVar]
+#       globals()['cookies'+str(i + 1)]["YOUTH_REDBODY"] = os.environ[redBodyVar]
+#       globals()['cookies' + str(i + 1)]["YOUTH_READTIMEBODY"] = os.environ[readTimeBodyVar]
+#       globals()['cookies' + str(i + 1)]["YOUTH_WITHDRAWBODY"] = os.environ[withdrawBodyVar]
+#       COOKIELIST.append(globals()['cookies'+str(i + 1)])
+#   print(COOKIELIST)
+
+"""
+ac读取环境变量 修改多账号 以换行添加  
+by Curtin 
+"""
+if "YOUTH_HEADER" in os.environ and "YOUTH_READBODY" in os.environ and "YOUTH_READTIMEBODY" in os.environ :
+    COOKIELIST = []
+    YOUTH_HEADER_LIST=YOUTH_HEADER.split("\n")
+    YOUTH_READBODY_LIST=YOUTH_READBODY.split("\n")
+    YOUTH_READTIMEBODY_LIST=YOUTH_READTIMEBODY.split("\n")
+    cookie_num = locals()
+    for u in range(len(PY_YOUTH_HEADER.split("\n"))):
+        cookie_num['cookie' + str(u+1)] = {}
+        cookie_num['cookie' + str(u+1)]["YOUTH_HEADER"] = YOUTH_HEADER_LIST[u]
+        cookie_num['cookie' + str(u+1)]["YOUTH_READBODY"] = YOUTH_READBODY_LIST[u]
+        cookie_num['cookie' + str(u+1)]["YOUTH_READTIMEBODY"] = YOUTH_READTIMEBODY_LIST[u]
+        COOKIELIST.append(cookie_num.get('cookie' + str(u+1)))
 
 cur_path = os.path.abspath(os.path.dirname(__file__))
 root_path = os.path.split(cur_path)[0]
