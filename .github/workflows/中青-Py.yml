@@ -26,9 +26,9 @@ jobs:
           cd Youth
           python3 youth.py 
         env:
-            YOUTH_HEADER1: ${{ secrets.YOUTH_HEADER1 }}  #必须
-            YOUTH_READBODY1: ${{ secrets.YOUTH_READBODY1 }}  #必须
-            YOUTH_READTIMEBODY1: ${{ secrets.YOUTH_READTIMEBODY1 }}  #必须
+            YOUTH_HEADER1: ${{ secrets.YOUTH_HEADER_1 }}  #必须
+            YOUTH_READBODY1: ${{ secrets.YOUTH_ARTBODY_1 }}  #必须
+            YOUTH_READTIMEBODY1: ${{ secrets.YOUTH_TIME_1 }}  #必须
             BARK: ${{ secrets.BARK }}     # bark服务
             SCKEY: ${{ secrets.SCKEY }}   # server酱服务
             TG_BOT_TOKEN: ${{secrets.TG_BOT_TOKEN}} # tg通知token
