@@ -1,4 +1,4 @@
-name: Curtin-步步宝
+name: 步步宝
 
 on:
   workflow_dispatch:
