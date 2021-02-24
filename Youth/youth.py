@@ -32,9 +32,8 @@ COOKIELIST = [cookies1,]  # 多账号准备
 # ac读取环境变量
 if "YOUTH_HEADER1" in os.environ:
   COOKIELIST = []
-  a=''
   for i in range(5):
-    headerVar = 'YOUTH_HEADER{a)}'.format(a = str(i+1))
+    headerVar = 'YOUTH_HEADER{a}'.format(a = str(i+1))
     readBodyVar = 'YOUTH_READBODY{a}'.format(a =str(i+1))
     # redBodyVar = 'YOUTH_REDBODY{a}'.format(a =str(i+1))
     redBodyVar = ''
