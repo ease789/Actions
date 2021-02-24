@@ -32,12 +32,15 @@ COOKIELIST = [cookies1,]  # 多账号准备
 # ac读取环境变量
 if "YOUTH_HEADER1" in os.environ:
   COOKIELIST = []
+  a=''
   for i in range(5):
     headerVar = 'YOUTH_HEADER{a)}'.format(a = str(i+1))
     readBodyVar = 'YOUTH_READBODY{a}'.format(a =str(i+1))
-    redBodyVar = 'YOUTH_REDBODY{a}'.format(a =str(i+1))
+    # redBodyVar = 'YOUTH_REDBODY{a}'.format(a =str(i+1))
+    redBodyVar = ''
     readTimeBodyVar = 'YOUTH_READTIMEBODY{a}'.format(a =str(i+1))
-    withdrawBodyVar = 'YOUTH_WITHDRAWBODY{a}'.format(a =str(i+1))
+    # withdrawBodyVar = 'YOUTH_WITHDRAWBODY{a}'.format(a =str(i+1))
+    withdrawBodyVar = ''
     if headerVar in os.environ and os.environ[headerVar] and readBodyVar in os.environ and os.environ[readBodyVar] and redBodyVar in os.environ and os.environ[redBodyVar] and readTimeBodyVar in os.environ and os.environ[readTimeBodyVar]:
       globals()['cookies'+str(i + 1)]["YOUTH_HEADER"] = json.loads(os.environ[headerVar])
       globals()['cookies'+str(i + 1)]["YOUTH_READBODY"] = os.environ[readBodyVar]
