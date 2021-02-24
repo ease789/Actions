@@ -62,6 +62,8 @@ if "YOUTH_HEADER" in os.environ and "YOUTH_READBODY" in os.environ and "YOUTH_RE
         cookie_num['cookie' + str(u+1)]["YOUTH_HEADER"] = YOUTH_HEADER_LIST[u]
         cookie_num['cookie' + str(u+1)]["YOUTH_READBODY"] = YOUTH_READBODY_LIST[u]
         cookie_num['cookie' + str(u+1)]["YOUTH_READTIMEBODY"] = YOUTH_READTIMEBODY_LIST[u]
+        cookie_num['cookie' + str(u+1)]["YOUTH_REDBODY"] = ""
+        cookie_num['cookie' + str(u+1)]["YOUTH_WITHDRAWBODY"] = ""
         COOKIELIST.append(cookie_num.get('cookie' + str(u+1)))
 
 cur_path = os.path.abspath(os.path.dirname(__file__))
