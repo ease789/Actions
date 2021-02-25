@@ -11,7 +11,7 @@
 
 
 # Secrets说明
-### 中青
+### 【中青】
   * 签到分享转盘开箱打卡
       
  Actions  | yml   | Secrets  |  值  |  说明
@@ -26,27 +26,27 @@
  * 自动阅读观看
 
 
-### 步步宝
+### 【步步宝】
 Actions  | yml   | Secrets  |  值  |  说明
  ---- | ----- | ------ | ----- | -----
 步步宝 | 步步宝.yml | BBB_BUBUBAOTOKEN | token的值 | 必须 多账号换行
 步步宝 | 步步宝.yml | BBB_CASH | 可设置0 0.3 50 100 200 888  默认0关闭提现，设置888由上至下循环提现 | 可选 多账号换行
 
 
-### 笑普
+### 【笑普】
 Actions  | yml   | Secrets  |  值  |  说明
  ---- | ----- | ------ | ----- | -----
 笑普 | 笑普.yml | XP_REFRESHTOKEN | token的值 | 必须 多账号换行
 
 
 
-### 芝嫲视频
+### 【芝嫲视频】
 Actions  | yml   | Secrets  |  值  |  说明
  ---- | ----- | ------ | ----- | -----
 芝嫲视频 | 芝嫲视频.yml | ZM_ZHIMABODY | body 例：appversion=10&desarr=xxxx | 必须 多账号换行
 
 
-### 京东多合一签到
+### 【京东多合一签到】
 Actions  | yml   | Secrets  |  值  |  说明
  ---- | ----- | ------ | ----- | -----
 京东-多合一签到 | 京东多合一签到.yml | KEY_1 | 京东cookie | 多账号自行修改yml，目前可以写5个账号KEY_1、KEY_2、KEY_3、KEY_4、KEY_5
