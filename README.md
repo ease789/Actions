@@ -1,10 +1,10 @@
 # 测试Actions
 # 测试项目
-* `中青`
-* `步步宝`
-* `笑普`
-* `芝嫲视频`
-* `京东多合一签到`
+* `中青 youth.js youth.py Youth_AutoRead.js`
+* `步步宝 bububao.js`
+* `笑普 iboxpay.js`
+* `芝嫲视频 zhima.js`
+* `京东多合一签到 JD_DailyBonus.js`
 
 
 # Secrets说明
