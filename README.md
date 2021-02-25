@@ -1,6 +1,11 @@
 # 测试Actions
 #### 更新 2021.2.25
 #### By CurtinLV
+##### 致谢 脚本作者
+  @ziye
+  @Sunert
+  @NobyDa
+
 
 ## 测试项目
 * `中青`
