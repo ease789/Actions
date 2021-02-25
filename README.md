@@ -1,4 +1,4 @@
-# * 测试Actions
+# 测试Actions
 #### 更新 2021.2.25
 #### By CurtinLV
 
@@ -10,8 +10,8 @@
 * `京东多合一签到`
 
 
-# * Secrets说明
-### - 中青
+# Secrets说明
+### 中青
   * 签到分享转盘开箱打卡
       
  Actions  | yml   | Secrets  |  值  |  说明
@@ -33,7 +33,7 @@ Actions  | yml   | Secrets  |  值  |  说明
 步步宝 | 步步宝.yml | BBB_CASH | 可设置0 0.3 50 100 200 888  默认0关闭提现，设置888由上至下循环提现 | 可选 多账号换行
 
 
-### 三、笑普
+### 笑普
 Actions  | yml   | Secrets  |  值  |  说明
  ---- | ----- | ------ | ----- | -----
 笑普 | 笑普.yml | XP_REFRESHTOKEN | token的值 | 必须 多账号换行
