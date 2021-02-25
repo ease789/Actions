@@ -1,12 +1,4 @@
 # 测试Actions
-#### 更新 2021.2.25
-#### By CurtinLV
-##### 致谢 脚本作者
-  @ziye  
-  @Sunert  
-  @NobyDa  
-
-
 # 测试项目
 * `中青`
 * `步步宝`
@@ -55,3 +47,14 @@ Actions  | yml   | Secrets  |  值  |  说明
 Actions  | yml   | Secrets  |  值  |  说明
  ---- | ----- | ------ | ----- | -----
 京东-多合一签到 | 京东多合一签到.yml | KEY_1 | 京东cookie | 多账号自行修改yml，  目前可以写5个账号KEY_1、KEY_2、KEY_3、KEY_4、KEY_5
+
+
+
+#### 更新 2021.2.25
+#### By CurtinLV
+##### 致谢 脚本作者
+  @ziye  
+  @Sunert  
+  @NobyDa  
+
+
