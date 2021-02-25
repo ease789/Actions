@@ -1,4 +1,6 @@
 /*
+本仓库借用Lxk0301大佬发送通知脚本，感谢@lxk0301
+已注释所有未提供KEY的日志，如有需要自行添加
  * @Author: LXK9301 https://github.com/LXK9301
  * @Date: 2020-08-19 16:12:40 
  * @Last Modified by: LXK9301
@@ -48,6 +50,7 @@ let QYWX_KEY = '';
 
 // =======================================企业微信应用消息通知设置区域===========================================
 //此处填你企业微信应用消息的 值(详见文档 https://work.weixin.qq.com/api/doc/90000/90135/90236)，依次填上corpid的值,corpsecret的值,touser的值,agentid的值，素材库图片id（见https://github.com/LXK9301/jd_scripts/issues/519) 注意用,号隔开，例如：wwcff56746d9adwers,B-791548lnzXBE6_BWfxdf3kSTMJr9vFEPKAbh6WERQ,mingcheng,1000001,2COXgjH2UIfERF2zxrtUOKgQ9XklUqMdGSWLBoW_lSDAdafat
+//corpid的值,corpsecret的值,touser的值,agentid的值，素材库图片id的获取,可查看此教程(http://note.youdao.com/s/HMiudGkb)
 //增加一个选择推送消息类型，用图文消息直接填写素材库图片id的值，用卡片消息就填写0(就是数字零)
 //(环境变量名 QYWX_AM)
 let QYWX_AM = '';
@@ -59,7 +62,7 @@ let IGOT_PUSH_KEY = '';
 // =======================================push+设置区域=======================================
 //官方文档：https://pushplus.hxtrip.com/
 //PUSH_PLUS_TOKEN：微信扫码登录后一对一推送或一对多推送下面的token(您的Token)，不提供PUSH_PLUS_USER则默认为一对一推送
-//PUSH_PLUS_USER： 一对多推送的“群组编码”（一对多推送下面->您的群组(如无则新建)->群组编码，如果您是创建群组人。也需点击“查看二维码”扫描绑定，否则不能接受群组消息推送）
+//PUSH_PLUS_USER： 一对多推送的"群组编码"（一对多推送下面->您的群组(如无则新建)->群组编码，如果您是创建群组人。也需点击"查看二维码"扫描绑定，否则不能接受群组消息推送）
 let PUSH_PLUS_TOKEN = '';
 let PUSH_PLUS_USER = '';
 
@@ -130,7 +133,7 @@ if (process.env.PUSH_PLUS_USER) {
 
 async function sendNotify(text, desp, params = {}) {
   //提供7种通知
-  desp += `\n本脚本开源免费使用 By：https://github.com/LXK9301/jd_scripts`;
+  //desp += `\n本脚本开源免费使用 By：https://github.com/LXK9301/jd_scripts`;
   await Promise.all([
     serverNotify(text, desp),//微信server酱
     pushPlusNotify(text, desp)//pushplus(推送加)
@@ -185,7 +188,7 @@ function serverNotify(text, desp, timeout = 2100) {
         })
       }, timeout)
     } else {
-      console.log('您未提供server酱的SCKEY，取消微信推送消息通知\n');
+      //console.log('您未提供server酱的SCKEY，取消微信推送消息通知\n');
       resolve()
     }
   })
@@ -259,7 +262,7 @@ function CoolPush(text, desp) {
         }
       })
     } else {
-      console.log('您未提供酷推的SKEY，取消QQ推送消息通知\n');
+      //console.log('您未提供酷推的SKEY，取消QQ推送消息通知\n');
       resolve()
     }
   })
@@ -294,7 +297,7 @@ function BarkNotify(text, desp, params={}) {
         }
       })
     } else {
-      console.log('您未提供Bark的APP推送BARK_PUSH，取消Bark推送消息通知\n');
+      //console.log('您未提供Bark的APP推送BARK_PUSH，取消Bark推送消息通知\n');
       resolve()
     }
   })
@@ -344,7 +347,7 @@ function tgBotNotify(text, desp) {
         }
       })
     } else {
-      console.log('您未提供telegram机器人推送所需的TG_BOT_TOKEN和TG_USER_ID，取消telegram推送消息通知\n');
+      //console.log('您未提供telegram机器人推送所需的TG_BOT_TOKEN和TG_USER_ID，取消telegram推送消息通知\n');
       resolve()
     }
   })
@@ -410,7 +413,7 @@ function ddBotNotify(text, desp) {
         }
       })
     } else {
-      console.log('您未提供钉钉机器人推送所需的DD_BOT_TOKEN或者DD_BOT_SECRET，取消钉钉推送消息通知\n');
+      //console.log('您未提供钉钉机器人推送所需的DD_BOT_TOKEN或者DD_BOT_SECRET，取消钉钉推送消息通知\n');
       resolve()
     }
   })
@@ -451,7 +454,7 @@ function qywxBotNotify(text, desp) {
         }
       });
     } else {
-      console.log('您未提供企业微信机器人推送所需的QYWX_KEY，取消企业微信推送消息通知\n');
+      //console.log('您未提供企业微信机器人推送所需的QYWX_KEY，取消企业微信推送消息通知\n');
       resolve();
     }
   });
@@ -538,7 +541,7 @@ function qywxamNotify(text, desp) {
       });
       });
     } else {
-      console.log('您未提供企业微信应用消息推送所需的QYWX_AM，取消企业微信应用消息推送消息通知\n');
+      //console.log('您未提供企业微信应用消息推送所需的QYWX_AM，取消企业微信应用消息推送消息通知\n');
       resolve();
     }
   });
@@ -581,7 +584,7 @@ function iGotNotify(text, desp, params={}){
         }
       })
     } else {
-      console.log('您未提供iGot的推送IGOT_PUSH_KEY，取消iGot推送消息通知\n');
+      //console.log('您未提供iGot的推送IGOT_PUSH_KEY，取消iGot推送消息通知\n');
       resolve()
     }
   })
@@ -624,7 +627,7 @@ function pushPlusNotify(text, desp) {
         }
       })
     } else {
-      console.log('您未提供push+推送所需的PUSH_PLUS_TOKEN，取消push+推送消息通知\n');
+      //console.log('您未提供push+推送所需的PUSH_PLUS_TOKEN，取消push+推送消息通知\n');
       resolve()
     }
   })
