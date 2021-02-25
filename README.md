@@ -13,9 +13,9 @@
       
  Actions  | yml   | Secrets  |  值  |  说明
  ---- | ----- | ------ | ----- | -----
- 中青看点-签到【new】  | 中青看点签到.yml | YOUTH_HEADER | &uid=xxx&cookie=xxx&cookie_id=xxxx | `必须`  多账号换行 
- 中青看点-签到【new】  | 中青看点签到.yml | YOUTH_ARTBODY | p=xxxxx | 多账号换行 
- 中青看点-签到【new】  | 中青看点签到.yml | YOUTH_TIME | p=xxxxx | 多账号换行 
+ 中青看点  | 中青看点签到.yml | YOUTH_HEADER | &uid=xxx&cookie=xxx&cookie_id=xxxx | `必须`  多账号换行 
+ 中青看点 | 中青看点签到.yml | YOUTH_ARTBODY | p=xxxxx | 多账号换行 
+ 中青看点 | 中青看点签到.yml | YOUTH_TIME | p=xxxxx | 多账号换行 
  中青-Python `Py版本` | 中青-Py.yml | YOUTH_HEADER_1 | 完整的请求头 如：{"Accept-Encoding"：xxx； } | 多账号换行
  中青-Python `Py版本` | 中青-Py.yml | YOUTH_ARTBODY_1 | p=xxxxx | 多账号换行 
  中青-Python `Py版本` | 中青-Py.yml | YOUTH_TIME_1 | p=xxxxx | 多账号换行 
