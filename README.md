@@ -5,7 +5,7 @@ By CurtinLV
 ## 一、`中青`
   * 签到分享转盘开箱打卡
       
- Actions  | yml  | 表头  | Secrets  |  值  |  说明
+ Actions  | yml   | Secrets  |  值  |  说明
  ---- | ----- | ------ | ----- | ----- | -----  
  中青看点-签到【new】  | 中青看点签到.yml | YOUTH_HEADER | &uid=xxx&cookie=xxx&cookie_id=xxxx | `必须` 多账号换行 |
  中青看点-签到【new】  | 中青看点签到.yml | YOUTH_ARTBODY | p=xxxxx | 多账号换行 |
