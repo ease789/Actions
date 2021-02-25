@@ -2,7 +2,7 @@ name: 中青-Python
 on:  
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * * '
+    - cron: '*/30 * * * *'
   watch:
     types: [started]
 jobs:
