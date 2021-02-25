@@ -1,4 +1,4 @@
-name: 中青看点-签到【new】
+name: 中青看点
 
 on:
   workflow_dispatch:
@@ -29,7 +29,7 @@ jobs:
       - name: '运行 【中青看点-签到】'
         if: env.YOUTH_HEADER
         run: |
-          node Youth/youth_20210223.js
+          node Youth/youth.js
         env:
           YOUTH_NOTIFY_CONTROL: ${{ secrets.YOUTH_NOTIFY_CONTROL }}
           PUSH_KEY: ${{ secrets.PUSH_KEY}}
