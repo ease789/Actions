@@ -1,4 +1,4 @@
-# *测试Actions
+# * 测试Actions
 #### 更新 2021.2.25
 #### By CurtinLV
 
@@ -10,8 +10,8 @@
 * `京东多合一签到`
 
 
-# *Secrets说明
-### 一、中青
+# * Secrets说明
+### - 中青
   * 签到分享转盘开箱打卡
       
  Actions  | yml   | Secrets  |  值  |  说明
@@ -26,7 +26,7 @@
  * 自动阅读观看
 
 
-### 二、步步宝
+### 步步宝
 Actions  | yml   | Secrets  |  值  |  说明
  ---- | ----- | ------ | ----- | -----
 步步宝 | 步步宝.yml | BBB_BUBUBAOTOKEN | token的值 | 必须 多账号换行
@@ -40,13 +40,13 @@ Actions  | yml   | Secrets  |  值  |  说明
 
 
 
-### 四、芝嫲视频
+### 芝嫲视频
 Actions  | yml   | Secrets  |  值  |  说明
  ---- | ----- | ------ | ----- | -----
 芝嫲视频 | 芝嫲视频.yml | ZM_ZHIMABODY | body 例：appversion=10&desarr=xxxx | 必须 多账号换行
 
 
-### 五、京东多合一签到
+### 京东多合一签到
 Actions  | yml   | Secrets  |  值  |  说明
  ---- | ----- | ------ | ----- | -----
 京东-多合一签到 | 京东多合一签到.yml | KEY_1 | 京东cookie | 多账号自行修改yml，目前可以写5个账号KEY_1、KEY_2、KEY_3、KEY_4、KEY_5
