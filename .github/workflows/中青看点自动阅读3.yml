@@ -24,35 +24,35 @@ jobs:
         run: |
           node Youth/Youth_AutoRead.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ__1_50 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ_C_1_50 }}
       - name: '运行 【中青看点二】'  
         run: |
           node Youth/Youth_AutoRead.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ__50_100 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ_C_50_100 }}
       - name: '运行 【中青看点三】'  
         run: |
           node Youth/Youth_AutoRead.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ__100_150 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ_C_100_150 }}
       - name: '运行 【中青看点四】'  
         run: |
           node Youth/Youth_AutoRead.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ__150_200 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ_C_150_200 }}
       - name: '运行 【中青看点五】'  
         run: |
           node Youth/Youth_AutoRead.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ__200_250 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ_C_200_250 }}
       - name: '运行 【中青看点六】'  
         run: |
           node Youth/Youth_AutoRead.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ__250_300 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ_C_250_300 }}
       - name: '运行 【中青看点七】'  
         run: |
           node Youth/Youth_AutoRead.js
         env:
-          YOUTH_READ: ${{ secrets.YOUTH_READ__300_350 }}
+          YOUTH_READ: ${{ secrets.YOUTH_READ_C_300_350 }}
 
