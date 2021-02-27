@@ -1,0 +1,58 @@
+name: 中青看点-自动阅读3
+
+on:
+  workflow_dispatch:
+
+  schedule:
+     - cron: '30 */4 * * *'
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          npm install
+      - name: '运行 【中青看点一】'  
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ__1_50 }}
+      - name: '运行 【中青看点二】'  
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ__50_100 }}
+      - name: '运行 【中青看点三】'  
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ__100_150 }}
+      - name: '运行 【中青看点四】'  
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ__150_200 }}
+      - name: '运行 【中青看点五】'  
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ__200_250 }}
+      - name: '运行 【中青看点六】'  
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ__250_300 }}
+      - name: '运行 【中青看点七】'  
+        run: |
+          node Youth/Youth_AutoRead.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ__300_350 }}
+
